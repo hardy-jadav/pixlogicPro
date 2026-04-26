@@ -1,0 +1,23 @@
+<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Heart Shape for Logo -->
+  <defs>
+    <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A90B4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF6B35;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main Heart -->
+  <path d="M 40 70 C 20 55, 10 45, 10 35 C 10 22, 20 15, 28 15 C 34 15, 40 20, 40 20 C 40 20, 46 15, 52 15 C 60 15, 70 22, 70 35 C 70 45, 60 55, 40 70 Z" 
+        fill="url(#heartGradient)" 
+        stroke="#fff" 
+        stroke-width="1"/>
+  
+  <!-- Paw Print Accent (top right) -->
+  <circle cx="55" cy="25" r="4" fill="#FF6B35" opacity="0.8"/>
+  <circle cx="62" cy="32" r="3" fill="#FF6B35" opacity="0.8"/>
+  <circle cx="48" cy="32" r="3" fill="#4A90B4" opacity="0.8"/>
+  
+  <!-- Shine Effect -->
+  <ellipse cx="30" cy="28" rx="8" ry="10" fill="white" opacity="0.15"/>
+</svg>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIXLOGIX - Home</title>
+    <link rel="stylesheet" href="../../dist/output.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+</head>
+
+<body class="bg-white text-dark">
+
+    <!-- Top Bar with Contact Info -->
+    <div class="w-full bg-[#f8fafd] border-b border-gray-100 py-2.5 px-6 hidden md:block">
+        <div class="max-w-7xl mx-auto flex justify-between items-center text-[13px] tracking-wide">
+
+            <div class="flex items-center text-brand-dark">
+                <span class="font-bold mr-2">Opening Hours:</span>
+                <span class="text-gray-600">Mon - Fri 9.00 - 5.00</span>
+            </div>
+
+            <div class="flex items-center divide-x divide-gray-300">
+                <div class="pr-4 flex items-center">
+                    <span class="font-bold mr-2">Email:</span>
+                    <a href="mailto:support@example.com" class="text-gray-600 hover:text-brand-primary transition">
+                        support@example.com
+                    </a>
+                </div>
+                <div class="pl-4 flex items-center">
+                    <span class="font-bold mr-2">Call us at:</span>
+                    <a href="tel:+8441234567890" class="text-gray-600 hover:text-brand-primary transition">
+                        +844 1234 567 890
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="bg-white sticky top-0 z-50 border-b border-gray-50">
+        <nav class="max-w-7xl mx-auto px-6 h-[90px] flex justify-between items-center">
+
+            <div class="flex items-center">
+                <div class="flex items-center text-[24px] font-black tracking-tight text-brand-dark">
+                    <i class="fa-solid fa-heart text-brand-primary mr-1.5"></i>
+                    Cared<span class="text-brand-primary">Paws</span>
+                </div>
+            </div>
+
+            <ul class="hidden lg:flex items-center space-x-9 text-[15px] font-semibold">
+                <li><a href="#" class="text-brand-primary">Home</a></li>
+                <li>
+                    <a href="#" class="text-brand-dark hover:text-brand-primary flex items-center transition-colors">
+                        About Us <i class="fa-solid fa-chevron-down ml-1.5 text-[9px]"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="text-brand-dark hover:text-brand-primary flex items-center transition-colors">
+                        Services <i class="fa-solid fa-chevron-down ml-1.5 text-[9px]"></i>
+                    </a>
+                </li>
+                <li><a href="#" class="text-brand-dark hover:text-brand-primary transition-colors">Gallery</a></li>
+                <li><a href="#" class="text-brand-dark hover:text-brand-primary transition-colors">Testimonials</a></li>
+                <li><a href="#" class="text-brand-dark hover:text-brand-primary transition-colors">Blog</a></li>
+            </ul>
+
+            <div class="flex items-center">
+                <button
+                    class="bg-brand-blue text-white pl-7 pr-2 py-2 rounded-full font-bold text-[15px] flex items-center group hover:bg-brand-blueHover transition-all shadow-brand-btn">
+                    <span>Book Now</span>
+                    <div
+                        class="ml-4 bg-white w-8 h-8 rounded-full flex items-center justify-center text-brand-primary group-hover:rotate-45 transition-transform duration-300">
+                        <i class="fa-solid fa-arrow-up text-[10px]"></i>
+                    </div>
+                </button>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative py-20 md:py-28 overflow-hidden"
+        style="background-image: url('../assets/images/main/heroBg.png'); background-size: cover; background-position: center;">
+        <!-- Overlay for better text readability -->
+        <div class="absolute inset-0"></div>
+
+        <div class="container-custom relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+
+                <!-- Left Content -->
+                <div data-animate class="space-y-6 relative">
+
+                    <!-- Paw Icon (SVG) -->
+                    <div class="absolute -top-1 -left-10 w-10 h-10">
+                        <img src="../assets/icons/icon.svg" alt="paw" class="w-full h-full object-contain" />
+                    </div>
+
+                    <!-- Main Heading -->
+                    <h1 class="text-2xl font-medium md:text-xl lg:text-3xl font-black leading-tight">
+                        Where every
+                        <span class="text-brand-primary">paw gets the<br />love</span>
+                        it deserves
+                    </h1>
+
+                    <!-- Description -->
+                    <p class="text-gray-700 text-lg leading-relaxed max-w-lg">
+                        We provide safe, reliable, and professional care tailored for every pet. From playtime to
+                        medical checkups, your furry companion is in loving hands. Trust us to treat your pet like
+                        family—every step of the way.
+                    </p>
+
+                    <!-- CTA Button -->
+                    <div class="pt-4">
+                        <button
+                            class="bg-brand-blue text-white px-8 py-3 rounded-full font-bold text-lg flex items-center gap-3 hover:bg-brand-blueHover transition-all shadow-brand-btn group">
+                            <span>Schedule a Free Consultation</span>
+                            <div
+                                class="bg-white w-7 h-7 rounded-full flex items-center justify-center text-brand-blue group-hover:translate-x-1 transition-transform">
+                                <i class="fa-solid fa-arrow-right text-sm"></i>
+                            </div>
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- Right Image -->
+                <div data-animate class="flex justify-center md:justify-end">
+                    <div class="relative w-full max-w-md">
+                        <!-- Decorative Circle Background -->
+                        <div class="absolute inset-0 rounded-full opacity-20 scale-110"></div>
+
+                        <!-- Main Image -->
+                        <div class="relative overflow-hidden">
+                            <img src="../assets/images/main/heroImg.png" alt="Cared Paws - Dog and Cat"
+                                class="w-full h-auto object-cover">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 md:py-28 bg-white relative overflow-hidden">
+
+
+        <div class="py-20 md:py-28 pointer-events-none absolute inset-0 z-0">
+
+            <!-- SVG 1 -->
+            <img src="../assets/icons/dogFoot.svg" class="absolute top-[45%] left-[30%] w-12 opacity-50" />
+
+
+            <!-- SVG 3 -->
+            <img src="../assets/icons/doubleDogIcon.svg" class="absolute top-1/2 right-1/4 w-40 opacity-90" />
+
+            <!-- SVG 4 -->
+            <img src="../assets/icons/dogFoot.svg" class="absolute top-[15%] left-[65%] w-12 -rotate-90 opacity-50" />
+
+        </div>
+
+
+
+
+        <div class="relative z-10 container-custom">
+            <!-- Top Section with Images and Heading -->
+            <div class="flex justify-between items-center space-x-6 mb-20">
+
+                <!-- LEFT IMAGE -->
+                <div class="flex justify-center md:justify-start">
+                    <img src="../assets/images/main/aboutusimg.png" class="w-32 md:w-56 h-auto object-contain"
+                        alt="dog" />
+                </div>
+
+                <!-- CENTER CONTENT -->
+                <div class="text-center">
+                    <div data-animate class="space-y-6 relative">
+                        <div class="absolute -top-5 -left-8 w-8 h-8">
+                            <img src="../assets/icons/icon.svg" alt="paw" class="w-full h-full object-contain" />
+                        </div>
+                        <!-- Main Heading -->
+                        <h2 class="text-2xl md:text-3xl font-medium lg:text-4xl leading-tight text-brand-dark">
+                            How we make pet care simple <br /> and stress-free
+                        </h2>
+                    </div>
+                </div>
+
+                <!-- RIGHT SIDE AVATARS -->
+                <div class="flex justify-center md:justify-end">
+
+                    <div class="relative w-[220px] h-[140px]">
+
+                        <!-- Avatar 1 -->
+                        <div
+                            class="absolute -left-10 top-0 w-10 h-10 md:w-40 md:h-40 rounded-full border-4 border-white overflow-hidden z-10">
+                            <img src="../assets/images/main/userFrame1.png" class="w-full h-full object-cover" />
+                        </div>
+
+                        <!-- Avatar 2 (Hover Target) -->
+                        <div
+                            class="group absolute right-0 w-10 h-10 md:w-40 md:h-40 rounded-full border-4 border-white overflow-hidden z-20 cursor-pointer">
+
+                            <!-- Image -->
+                            <img src="../assets/images/main/userFrame2.png" class="w-full h-full object-cover" />
+
+                            <!-- Hover Mask -->
+                            <div
+                                class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300">
+                            </div>
+
+                            <!-- About Us Content -->
+                            <div
+                                class="absolute inset-0 flex flex-col items-center justify-center text-white opacity-0 group-hover:opacity-100 transition">
+                                <span class="text-sm font-semibold">About Us</span>
+                                <i class="fa-solid fa-arrow-right mt-1"></i>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Statistics Section -->
+
+            <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
+
+                <!-- Stat Item -->
+                <div data-animate class="flex items-center gap-4 sm:gap-5">
+                    <i class="fa-solid fa-paw text-brand-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl"></i>
+
+                    <div>
+                        <h3 class="text-xl sm:text-3xl md:text-5xl font-semibold text-brand-dark leading-none">
+                            1000+
+                        </h3>
+                        <p class="text-gray-400 text-md sm:text-sm mt-1">
+                            Happy Pet Parents
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Stat Item -->
+                <div data-animate class="flex items-center gap-4 sm:gap-5">
+                    <i
+                        class="fa-solid fa-face-smile text-brand-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl"></i>
+
+                    <div>
+                        <h3 class="text-xl sm:text-3xl md:text-5xl font-semibold text-brand-dark leading-none">
+                            1000+
+                        </h3>
+                        <p class="text-gray-400 text-xs sm:text-sm mt-1">
+                            Happy Pets
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Stat Item -->
+                <div data-animate class="flex items-center gap-4 sm:gap-5">
+                    <i class="fa-solid fa-users text-brand-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl"></i>
+
+                    <div>
+                        <h3 class="text-xl sm:text-3xl md:text-5xl font-semibold text-brand-dark leading-none">
+                            20K+
+                        </h3>
+                        <p class="text-gray-400 text-xs sm:text-sm mt-1">
+                            Happy Customers
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Stat Item -->
+                <div data-animate class="flex items-center gap-4 sm:gap-5">
+                    <i
+                        class="fa-solid fa-people-group text-brand-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl"></i>
+
+                    <div>
+                        <h3 class="text-xl sm:text-3xl md:text-5xl font-semibold text-brand-dark leading-none">
+                            50+
+                        </h3>
+                        <p class="text-gray-400 text-xs sm:text-sm mt-1">
+                            Employees
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="container-custom">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Why Choose PIXLOGIX?</h2>
+                <p class="text-gray text-lg max-w-2xl mx-auto">Everything you need to build professional websites
+                    without compromise</p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Feature 1 -->
+                <div data-animate class="card">
+                    <div class="text-accent text-4xl mb-4">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Lightning Fast</h3>
+                    <p class="text-gray">Optimized performance with Tailwind CSS and minimal dependencies. Local assets
+                        only.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div data-animate class="card">
+                    <div class="text-secondary text-4xl mb-4">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Secure & Private</h3>
+                    <p class="text-gray">No CDN dependencies. Everything runs locally on your machine or server.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div data-animate class="card">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Fully Customizable</h3>
+                    <p class="text-gray">Industry-standard folder structure and clean code for easy customization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section bg-light">
+        <div class="container-custom">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Our Services</h2>
+                <p class="text-gray text-lg">Complete solutions for modern web development</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Service 1 -->
+                <div data-animate class="card flex items-start gap-4">
+                    <div class="text-primary text-3xl flex-shrink-0">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Clean Code</h4>
+                        <p class="text-gray">Well-organized, semantic HTML with proper component structure for
+                            scalability.</p>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div data-animate class="card flex items-start gap-4">
+                    <div class="text-secondary text-3xl flex-shrink-0">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Responsive Design</h4>
+                        <p class="text-gray">Mobile-first approach with Tailwind utilities for perfect display on all
+                            devices.</p>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div data-animate class="card flex items-start gap-4">
+                    <div class="text-accent text-3xl flex-shrink-0">
+                        <i class="fas fa-icons"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Font Awesome Icons</h4>
+                        <p class="text-gray">6000+ professionally designed icons, installed locally for instant access.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div data-animate class="card flex items-start gap-4">
+                    <div class="text-primary text-3xl flex-shrink-0">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold mb-2">Fast Performance</h4>
+                        <p class="text-gray">Zero CDN latency with local assets and optimized Tailwind builds.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section bg-gradient-to-r from-primary to-secondary">
+        <div class="container-custom text-center text-white">
+            <h2 class="text-4xl font-bold mb-4">Ready to Build Something Amazing?</h2>
+            <p class="text-lg mb-8 opacity-90">Start your PIXLOGIX project today with industry-standard setup</p>
+            <button class="px-8 py-4 bg-white text-primary font-bold rounded-lg hover:bg-light transition-colors">
+                <i class="fas fa-star mr-2"></i> Start Now
+            </button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container-custom">
+            <div class="max-w-2xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold mb-4">Get In Touch</h2>
+                    <p class="text-gray text-lg">Have questions? We'd love to hear from you</p>
+                </div>
+
+                <form class="space-y-6 card">
+                    <div>
+                        <label class="block font-semibold mb-2">Name</label>
+                        <input type="text" placeholder="Your Name"
+                            class="w-full px-4 py-3 border border-gray rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+
+                    <div>
+                        <label class="block font-semibold mb-2">Email</label>
+                        <input type="email" placeholder="your@email.com"
+                            class="w-full px-4 py-3 border border-gray rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+
+                    <div>
+                        <label class="block font-semibold mb-2">Message</label>
+                        <textarea rows="5" placeholder="Your message..."
+                            class="w-full px-4 py-3 border border-gray rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full btn-primary">
+                        <i class="fas fa-paper-plane mr-2"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container-custom">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">PIXLOGIX</h4>
+                    <p class="text-gray">Professional web development with HTML, Tailwind, and Font Awesome.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray">
+                        <li><a href="#features" class="hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Follow Us</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-gray hover:text-primary transition-colors text-xl">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray hover:text-primary transition-colors text-xl">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray hover:text-primary transition-colors text-xl">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray hover:text-primary transition-colors text-xl">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray pt-8 text-center text-gray">
+                <p>&copy; 2026 PIXLOGIX. All rights reserved. | Built with HTML, Tailwind CSS & Font Awesome</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="../../src/js/main.js"></script>
+</body>
+
+</html>

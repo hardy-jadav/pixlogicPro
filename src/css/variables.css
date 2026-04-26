@@ -1,0 +1,51 @@
+/* Custom CSS Variables */
+:root {
+  /* Colors - Cared Paws Brand */
+  --color-primary: #4A90B4;           /* Teal Blue - Main Brand */
+  --color-secondary: #FF6B35;         /* Coral Orange - Accent */
+  --color-accent: #E74C3C;            /* Red - Heart Icon */
+  --color-dark: #2D3436;              /* Dark Gray */
+  --color-light: #F8FAFD;             /* Light Blue-Gray */
+  --color-white: #FFFFFF;
+  --color-gray: #A0AEC0;
+
+
+  /* Brand Colors from Nav.png & Homepage.jpg */
+  --color-brand-primary: #f16e53;    /* Coral/Orange */
+  --color-brand-blue: #6a89b6;       /* Button Blue */
+  --color-brand-blue-hover: #5a78a3; /* Darker Blue */
+  --color-brand-dark: #2d343e;       /* Nav Text */
+  --color-bg-topbar: #f8fafd;        /* Top Bar Gray/Blue */
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-button: 0 4px 15px rgba(106, 137, 182, 0.3);
+  
+  /* Border Radius */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 300ms ease-in-out;
+  --transition-slow: 500ms ease-in-out;
+
+  /* Custom Shadows */
+  --shadow-button: 0 4px 14px 0 rgba(106, 137, 182, 0.39);
+  
+  /* Typography */
+  --font-main: 'Inter', sans-serif;
+}

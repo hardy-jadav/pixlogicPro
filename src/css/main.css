@@ -1,0 +1,115 @@
+/* Import fonts */
+@import './fonts.css';
+
+/* Import variables */
+@import './variables.css';
+
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Base Styles */
+@layer base {
+  body {
+    @apply bg-white text-brand-dark font-inter;
+  }
+
+  h1 {
+    @apply text-4xl font-bold;
+  }
+
+  h2 {
+    @apply text-3xl font-bold;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold;
+  }
+
+  h4 {
+    @apply text-xl font-semibold;
+  }
+
+  h5 {
+    @apply text-lg font-semibold;
+  }
+
+  h6 {
+    @apply text-base font-semibold;
+  }
+
+  p {
+    @apply text-base leading-relaxed;
+  }
+
+  a {
+    @apply text-brand-primary hover:text-brand-primary transition-colors;
+  }
+
+  button {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors;
+  }
+}
+
+/* Custom Component Styles */
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-brand-blue text-white rounded-lg font-semibold hover:bg-brand-blueHover transition-colors;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-brand-primary text-white rounded-lg font-semibold hover:opacity-90 transition-colors;
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 border-2 border-brand-primary text-brand-primary rounded-lg font-semibold hover:bg-brand-primary hover:text-white transition-colors;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section {
+    @apply py-16 md:py-24;
+  }
+}
+
+/* Font Awesome Icon Styles */
+@layer utilities {
+  .icon-sm {
+    @apply w-4 h-4;
+  }
+
+  .icon-md {
+    @apply w-6 h-6;
+  }
+
+  .icon-lg {
+    @apply w-8 h-8;
+  }
+
+  .icon-xl {
+    @apply w-12 h-12;
+  }
+}
+
+/* Custom Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out;
+}
