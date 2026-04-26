@@ -145,10 +145,8 @@
     </section>
 
     <!-- About Us Section -->
-    <section id="about" class="py-20 md:py-28 bg-white relative overflow-hidden">
-
-
-        <div class="py-20 md:py-28 pointer-events-none absolute inset-0 z-0">
+    <section id="about" class="py-5 md:py-10 bg-white relative overflow-hidden">
+        <div class="py-5 md:py-10 pointer-events-none absolute inset-0 z-0">
 
             <!-- SVG 1 -->
             <img src="../assets/icons/dogFoot.svg" class="absolute top-[45%] left-[30%] w-12 opacity-50" />
@@ -291,101 +289,232 @@
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="section">
-        <div class="container-custom">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold mb-4">Why Choose PIXLOGIX?</h2>
-                <p class="text-gray text-lg max-w-2xl mx-auto">Everything you need to build professional websites
-                    without compromise</p>
-            </div>
+    <!-- Info Section -->
+    <section id="info" class="py-10 md:py-20 bg-white  relative overflow-hidden">
 
-            <!-- Features Grid -->
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Feature 1 -->
-                <div data-animate class="card">
-                    <div class="text-accent text-4xl mb-4">
-                        <i class="fas fa-bolt"></i>
+
+        <div class="py-10 md:py-20 pointer-events-none absolute inset-0 z-0">
+
+            <!-- SVG 1 -->
+            <img src="../assets/icons/dogFoot.svg" class="absolute top-[15%] left-[35%] w-12 opacity-90" />
+
+            <img src="../assets/icons/haddi-orange.svg" class="absolute top-[45%] left-[60%] w-10 opacity-50" />
+
+            <img src="../assets/icons/haddi-light.svg" class="absolute bottom-[10%] right-[50%] w-12 opacity-50" />
+
+            <img src="../assets/icons/dogFoot-orange.svg" class="absolute top-[15%] left-[65%] w-10 opacity-50" />
+
+        </div>
+
+
+
+        <div class="container-custom relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+
+                <!-- Left Image -->
+                <div class="flex justify-center md:justify-start order-2 md:order-1">
+                    <div class="relative w-full max-w-md">
+                        <img src="../assets/images/main/infoImg.png" alt="A little bit about us"
+                            class="w-full h-auto object-cover">
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Lightning Fast</h3>
-                    <p class="text-gray">Optimized performance with Tailwind CSS and minimal dependencies. Local assets
-                        only.</p>
                 </div>
 
-                <!-- Feature 2 -->
-                <div data-animate class="card">
-                    <div class="text-secondary text-4xl mb-4">
-                        <i class="fas fa-lock"></i>
+                <!-- Right Content -->
+                <div class="order-1 md:order-2 space-y-6">
+                    <div data-animate class="space-y-6 relative">
+                        <!-- Main Heading -->
+
+                        <div class="absolute -top-1 -left-10 w-10 h-10">
+                            <img src="../assets/icons/icon.svg" alt="paw" class="w-full h-full object-contain" />
+                        </div>
+
+
+
+                        <h2 class="text-2xl md:text-3xl lg:text-3xl font-black leading-tight text-brand-dark">
+                            A little bit about us
+                        </h2>
+
+                        <!-- Description 1 -->
+                        <p class="text-gray-700 text-base md:text-base leading-relaxed">
+                            We provide safe, reliable, and professional care tailored for every pet. From playtime to
+                            medical checkups, your furry companion is in loving hands. Trust us to treat your pet like
+                            family—every step of the way.
+                        </p>
+
+                        <!-- Description 2 -->
+                        <p class="text-gray-700 text-base md:text-base leading-relaxed">
+                            Offering exceptional love, attention, and expert care to keep your pets comfortable,
+                            healthy, and thriving.
+                        </p>
+
+                        <!-- CTA Button -->
+                        <div class="pt-2">
+                            <button
+                                class="bg-brand-blue text-white px-8 py-3 rounded-full font-bold text-lg flex items-center gap-3 hover:bg-brand-blueHover transition-all shadow-brand-btn group">
+                                <span>Schedule a Free Consultation</span>
+                                <div
+                                    class="bg-white w-7 h-7 rounded-full flex items-center justify-center text-brand-blue group-hover:translate-x-1 transition-transform">
+                                    <i class="fa-solid fa-arrow-right text-sm"></i>
+                                </div>
+                            </button>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Secure & Private</h3>
-                    <p class="text-gray">No CDN dependencies. Everything runs locally on your machine or server.</p>
                 </div>
 
-                <!-- Feature 3 -->
-                <div data-animate class="card">
-                    <div class="text-primary text-4xl mb-4">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Fully Customizable</h3>
-                    <p class="text-gray">Industry-standard folder structure and clean code for easy customization.</p>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="section bg-light">
-        <div class="container-custom">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold mb-4">Our Services</h2>
-                <p class="text-gray text-lg">Complete solutions for modern web development</p>
+    <!-- Pet Care Services Section -->
+    <section id="services" class="py-20 md:py-28 relative overflow-hidden"
+        style="background-image: url('../assets/images/main/serviceBg.png'); background-size: cover; background-position: top;">
+        <!-- Overlay -->
+        <div class="absolute inset-0"></div>
+
+        <div class="container-custom mt-16 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div class="flex justify-center mb-4">
+                    <div class="w-8 h-8">
+                        <img src="../assets/icons/icon.svg" alt="paw" class="w-full h-full object-contain" />
+                    </div>
+                </div>
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-black text-brand-dark mb-4">
+                    Our pet care services
+                </h2>
+                <p class="text-gray-700 text-base md:text-lg max-w-2xl mx-auto">
+                    Our pet care services offer loving, professional attention to keep your furry friends happy and
+                    healthy. From grooming to day care, we treat many pet like family.
+                </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Service 1 -->
-                <div data-animate class="card flex items-start gap-4">
-                    <div class="text-primary text-3xl flex-shrink-0">
-                        <i class="fas fa-code"></i>
+            <!-- Services Grid - Top Row (2 Cards) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <!-- Service 1: Pet Grooming -->
+                <div data-animate
+                    class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full">
+                    <div class="relative w-full h-64">
+                        <img src="../assets/images/service/service (1).png" alt="Pet Grooming"
+                            class="w-full h-full object-cover">
                     </div>
-                    <div>
-                        <h4 class="text-xl font-bold mb-2">Clean Code</h4>
-                        <p class="text-gray">Well-organized, semantic HTML with proper component structure for
-                            scalability.</p>
-                    </div>
-                </div>
-
-                <!-- Service 2 -->
-                <div data-animate class="card flex items-start gap-4">
-                    <div class="text-secondary text-3xl flex-shrink-0">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold mb-2">Responsive Design</h4>
-                        <p class="text-gray">Mobile-first approach with Tailwind utilities for perfect display on all
-                            devices.</p>
-                    </div>
-                </div>
-
-                <!-- Service 3 -->
-                <div data-animate class="card flex items-start gap-4">
-                    <div class="text-accent text-3xl flex-shrink-0">
-                        <i class="fas fa-icons"></i>
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold mb-2">Font Awesome Icons</h4>
-                        <p class="text-gray">6000+ professionally designed icons, installed locally for instant access.
-                        </p>
+                    <div class="p-6 flex flex-col justify-between flex-grow">
+                        <div>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-3">Pet Grooming</h3>
+                            <p class="text-gray-600 text-base leading-relaxed">
+                                We provide safe, reliable, and professional care tailored for every pet. From playtime
+                                to medical checkups, is in loving hands.
+                            </p>
+                        </div>
+                        <div class="pt-4 mt-auto">
+                            <button
+                                class="inline-flex items-center gap-2 bg-brand-blue text-white px-6 py-2 rounded-full font-bold text-base hover:bg-brand-blueHover transition-all">
+                                <span>Read More</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Service 4 -->
-                <div data-animate class="card flex items-start gap-4">
-                    <div class="text-primary text-3xl flex-shrink-0">
-                        <i class="fas fa-rocket"></i>
+                <!-- Service 2: PetsHotel -->
+                <div data-animate
+                    class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full">
+                    <div class="relative w-full h-64">
+                        <img src="../assets/images/service/service (2).png" alt="PetsHotel"
+                            class="w-full h-full object-cover">
                     </div>
-                    <div>
-                        <h4 class="text-xl font-bold mb-2">Fast Performance</h4>
-                        <p class="text-gray">Zero CDN latency with local assets and optimized Tailwind builds.</p>
+                    <div class="p-6 flex flex-col justify-between flex-grow">
+                        <div>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-3">PetsHotel</h3>
+                            <p class="text-gray-600 text-base leading-relaxed">
+                                We provide safe, reliable, and professional care tailored for every pet. From playtime
+                                to medical checkups, is in loving hands.
+                            </p>
+                        </div>
+                        <div class="pt-4 mt-auto">
+                            <button
+                                class="inline-flex items-center gap-2 bg-brand-blue text-white px-6 py-2 rounded-full font-bold text-base hover:bg-brand-blueHover transition-all">
+                                <span>Read More</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services Grid - Bottom Row (3 Cards) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Service 3: Doggie Day Camp -->
+                <div data-animate
+                    class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full">
+                    <div class="relative w-full h-64">
+                        <img src="../assets/images/service/service (3).png" alt="Doggie Day Camp"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col justify-between flex-grow">
+                        <div>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-3">Doggie Day Camp</h3>
+                            <p class="text-gray-600 text-base leading-relaxed">
+                                We provide safe, reliable, and professional care tailored for every pet. From playtime
+                                to medical checkups, is in loving hands.
+                            </p>
+                        </div>
+                        <div class="pt-4 mt-auto">
+                            <button
+                                class="inline-flex items-center gap-2 bg-brand-blue text-white px-6 py-2 rounded-full font-bold text-base hover:bg-brand-blueHover transition-all">
+                                <span>Read More</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4: Dog Training -->
+                <div data-animate
+                    class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full">
+                    <div class="relative w-full h-64">
+                        <img src="../assets/images/service/service (4).png" alt="Dog Training"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6 flex flex-col justify-between flex-grow">
+                        <div>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-3">Dog Training</h3>
+                            <p class="text-gray-600 text-base leading-relaxed">
+                                We provide safe, reliable, and professional care tailored for every pet. From playtime
+                                to medical checkups, is in loving hands.
+                            </p>
+                        </div>
+                        <div class="pt-4 mt-auto">
+                            <button
+                                class="inline-flex items-center gap-2 bg-brand-blue text-white px-6 py-2 rounded-full font-bold text-base hover:bg-brand-blueHover transition-all">
+                                <span>Read More</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 5: Veterinary Care -->
+                <div data-animate
+                    class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow flex flex-col h-full">
+                    <div class="relative w-full h-64">
+                        <img src="../assets/images/service/service (5).png" alt="Veterinary Care"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-1 flex flex-col justify-between flex-grow">
+                        <div class="flex flex-col px-6 pt-3">
+                            <h3 class="text-2xl font-bold text-brand-dark mb-3">Veterinary Care</h3>
+                            <p class="text-gray-600 text-base leading-relaxed">
+                                We provide safe, reliable, and professional care tailored for every pet. From playtime
+                                to medical checkups, is in loving hands.
+                            </p>
+                        </div>
+                        <div class="pt-4 top-20 mt-auto">
+                            <button
+                                class="inline-flex items-center gap-2 bg-brand-blue text-white px-6 py-2 rounded-full font-bold text-base hover:bg-brand-blueHover transition-all">
+                                <span>Read More</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
