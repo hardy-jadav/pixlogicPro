@@ -4,23 +4,26 @@
  */
 
 // Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   console.log('PIXLOGIX Project Initialized');
-  
+
   // Initialize mobile menu toggle
   initMobileMenu();
-  
+
   // Initialize smooth scrolling
   initSmoothScroll();
-  
+
   // Initialize animations
   initAnimations();
-  
+
   // Initialize team slider
   initTeamSlider();
 
   // Initialize reviews carousel
   initReviewsCarousel();
+
+  // Initialize FAQ accordion
+  initFAQAccordion();
 });
 
 /**
@@ -29,16 +32,16 @@ document.addEventListener('DOMContentLoaded', function() {
 function initMobileMenu() {
   const menuBtn = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
-  
+
   if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', function() {
+    menuBtn.addEventListener('click', function () {
       mobileMenu.classList.toggle('hidden');
     });
-    
+
     // Close menu when clicking on a link
     const links = mobileMenu.querySelectorAll('a');
     links.forEach(link => {
-      link.addEventListener('click', function() {
+      link.addEventListener('click', function () {
         mobileMenu.classList.add('hidden');
       });
     });
@@ -50,15 +53,15 @@ function initMobileMenu() {
  */
 function initSmoothScroll() {
   const links = document.querySelectorAll('a[href^="#"]');
-  
+
   links.forEach(link => {
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
-      
+
       if (href !== '#') {
         e.preventDefault();
         const target = document.querySelector(href);
-        
+
         if (target) {
           target.scrollIntoView({
             behavior: 'smooth',
@@ -78,8 +81,8 @@ function initAnimations() {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
   };
-  
-  const observer = new IntersectionObserver(function(entries) {
+
+  const observer = new IntersectionObserver(function (entries) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('animate-fade-in-up');
@@ -87,7 +90,7 @@ function initAnimations() {
       }
     });
   }, observerOptions);
-  
+
   // Observe all elements with animation class
   const animatedElements = document.querySelectorAll('[data-animate]');
   animatedElements.forEach(element => {
@@ -101,7 +104,7 @@ function initAnimations() {
 function setActiveNavigation() {
   const navLinks = document.querySelectorAll('nav a');
   const currentLocation = location.href;
-  
+
   navLinks.forEach(link => {
     if (link.href === currentLocation) {
       link.classList.add('active');
@@ -184,6 +187,8 @@ function initTeamSlider() {
 
 /**
  * Reviews Carousel Functionality
+ * Shows 2 review cards at a time on desktop, 1 on mobile.
+ * Navigation moves by the number of visible cards.
  */
 function initReviewsCarousel() {
   const slider = document.getElementById('reviewSlider');
@@ -193,24 +198,32 @@ function initReviewsCarousel() {
   if (!slider || !prevBtn || !nextBtn) return;
 
   const wrapper = slider.parentElement;
-  let currentIndex = 0;
+  let currentOffset = 0;
   let slideWidth = 0;
-  let totalSlides = 0;
+  let slideGap = 0;
+  let visibleSlides = 0;
+  let maxOffset = 0;
 
   function calculateSizes() {
     const firstSlide = slider.children[0];
     if (!firstSlide || !wrapper) return;
 
     slideWidth = firstSlide.offsetWidth;
-    totalSlides = slider.children.length;
+    slideGap = parseInt(getComputedStyle(slider).gap) || 0;
+    // Show 2 cards on md+ screens, 1 on mobile
+    visibleSlides = window.innerWidth < 768 ? 1 : 2;
+    maxOffset = Math.max(0, slider.scrollWidth - wrapper.offsetWidth);
+
+    if (currentOffset > maxOffset) {
+      currentOffset = maxOffset;
+    }
   }
 
   function updateSlider() {
-    const offset = currentIndex * slideWidth;
-    slider.style.transform = `translateX(-${offset}px)`;
+    slider.style.transform = `translateX(-${currentOffset}px)`;
 
-    const atStart = currentIndex === 0;
-    const atEnd = currentIndex === totalSlides - 1;
+    const atStart = currentOffset <= 0;
+    const atEnd = currentOffset >= maxOffset;
 
     prevBtn.classList.toggle('opacity-50', atStart);
     prevBtn.classList.toggle('cursor-not-allowed', atStart);
@@ -227,15 +240,17 @@ function initReviewsCarousel() {
   });
 
   prevBtn.addEventListener('click', () => {
-    if (currentIndex > 0) {
-      currentIndex--;
+    if (currentOffset > 0) {
+      const step = (slideWidth + slideGap) * visibleSlides;
+      currentOffset = Math.max(0, currentOffset - step);
       updateSlider();
     }
   });
 
   nextBtn.addEventListener('click', () => {
-    if (currentIndex < totalSlides - 1) {
-      currentIndex++;
+    if (currentOffset < maxOffset) {
+      const step = (slideWidth + slideGap) * visibleSlides;
+      currentOffset = Math.min(maxOffset, currentOffset + step);
       updateSlider();
     }
   });
@@ -244,3 +259,69 @@ function initReviewsCarousel() {
   calculateSizes();
   updateSlider();
 }
+
+/**
+ * FAQ Accordion Functionality
+ * Only one accordion panel remains open at a time.
+ * Active item gets border-brand-primary highlight and minus icon.
+ */
+function initFAQAccordion() {
+  const items = document.querySelectorAll('.faq-item');
+  if (!items.length) return;
+
+  function closeItem(item) {
+    const button = item.querySelector('.faq-button');
+    const panel = item.querySelector('.faq-panel');
+    const icon = item.querySelector('.faq-icon i');
+
+    if (!button || !panel) return;
+
+    button.setAttribute('aria-expanded', 'false');
+    panel.classList.add('hidden');
+
+    // Reset button styles
+    button.style.backgroundColor = '';
+    button.style.borderColor = '';
+
+    // Only change the icon
+    if (icon) {
+      icon.classList.remove('fa-arrow-up');
+      icon.classList.add('fa-arrow-down');
+    }
+  }
+
+  function openItem(item) {
+    const button = item.querySelector('.faq-button');
+    const panel = item.querySelector('.faq-panel');
+    const icon = item.querySelector('.faq-icon i');
+
+    if (!button || !panel) return;
+
+    button.setAttribute('aria-expanded', 'true');
+    panel.classList.remove('hidden');
+
+    // Apply custom styles to question button
+    button.style.backgroundColor = '#F7F9FC';
+    button.style.borderColor = '#7FA1C3';
+
+    // Only change the icon
+    if (icon) {
+      icon.classList.remove('fa-arrow-down');
+      icon.classList.add('fa-arrow-up');
+    }
+  }
+
+  items.forEach(item => {
+    const button = item.querySelector('.faq-button');
+    if (!button) return;
+
+    button.addEventListener('click', () => {
+      const isOpen = button.getAttribute('aria-expanded') === 'true';
+
+      items.forEach(i => closeItem(i));
+
+      if (!isOpen) openItem(item);
+    });
+  });
+}
+
