@@ -15,6 +15,12 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Initialize animations
   initAnimations();
+  
+  // Initialize team slider
+  initTeamSlider();
+
+  // Initialize reviews carousel
+  initReviewsCarousel();
 });
 
 /**
@@ -105,3 +111,136 @@ function setActiveNavigation() {
 
 // Call on page load
 setActiveNavigation();
+
+/**
+ * Team Slider Functionality
+ */
+function initTeamSlider() {
+  const slider = document.getElementById('teamSlider');
+  const prevBtn = document.getElementById('teamPrevBtn');
+  const nextBtn = document.getElementById('teamNextBtn');
+
+  if (!slider || !prevBtn || !nextBtn) return;
+
+  const wrapper = slider.parentElement;
+  let currentOffset = 0;
+  let slideWidth = 0;
+  let slideGap = 0;
+  let visibleSlides = 0;
+  let maxOffset = 0;
+
+  function calculateSizes() {
+    const firstSlide = slider.children[0];
+    if (!firstSlide || !wrapper) return;
+
+    slideWidth = firstSlide.offsetWidth;
+    slideGap = parseInt(getComputedStyle(slider).gap) || 0;
+    visibleSlides = window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 4;
+    maxOffset = Math.max(0, slider.scrollWidth - wrapper.offsetWidth);
+
+    if (currentOffset > maxOffset) {
+      currentOffset = maxOffset;
+    }
+  }
+
+  function updateSlider() {
+    slider.style.transform = `translateX(-${currentOffset}px)`;
+
+    const atStart = currentOffset === 0;
+    const atEnd = currentOffset >= maxOffset;
+
+    prevBtn.classList.toggle('opacity-50', atStart);
+    prevBtn.classList.toggle('cursor-not-allowed', atStart);
+    nextBtn.classList.toggle('opacity-50', atEnd);
+    nextBtn.classList.toggle('cursor-not-allowed', atEnd);
+
+    prevBtn.disabled = atStart;
+    nextBtn.disabled = atEnd;
+  }
+
+  window.addEventListener('resize', () => {
+    calculateSizes();
+    updateSlider();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if (currentOffset > 0) {
+      currentOffset = Math.max(0, currentOffset - (slideWidth + slideGap) * visibleSlides);
+      updateSlider();
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (currentOffset < maxOffset) {
+      currentOffset = Math.min(maxOffset, currentOffset + (slideWidth + slideGap) * visibleSlides);
+      updateSlider();
+    }
+  });
+
+  // Initialize slider on page load
+  calculateSizes();
+  updateSlider();
+}
+
+/**
+ * Reviews Carousel Functionality
+ */
+function initReviewsCarousel() {
+  const slider = document.getElementById('reviewSlider');
+  const prevBtn = document.getElementById('reviewPrevBtn');
+  const nextBtn = document.getElementById('reviewNextBtn');
+
+  if (!slider || !prevBtn || !nextBtn) return;
+
+  const wrapper = slider.parentElement;
+  let currentIndex = 0;
+  let slideWidth = 0;
+  let totalSlides = 0;
+
+  function calculateSizes() {
+    const firstSlide = slider.children[0];
+    if (!firstSlide || !wrapper) return;
+
+    slideWidth = firstSlide.offsetWidth;
+    totalSlides = slider.children.length;
+  }
+
+  function updateSlider() {
+    const offset = currentIndex * slideWidth;
+    slider.style.transform = `translateX(-${offset}px)`;
+
+    const atStart = currentIndex === 0;
+    const atEnd = currentIndex === totalSlides - 1;
+
+    prevBtn.classList.toggle('opacity-50', atStart);
+    prevBtn.classList.toggle('cursor-not-allowed', atStart);
+    nextBtn.classList.toggle('opacity-50', atEnd);
+    nextBtn.classList.toggle('cursor-not-allowed', atEnd);
+
+    prevBtn.disabled = atStart;
+    nextBtn.disabled = atEnd;
+  }
+
+  window.addEventListener('resize', () => {
+    calculateSizes();
+    updateSlider();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateSlider();
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (currentIndex < totalSlides - 1) {
+      currentIndex++;
+      updateSlider();
+    }
+  });
+
+  // Initialize carousel on page load
+  calculateSizes();
+  updateSlider();
+}
