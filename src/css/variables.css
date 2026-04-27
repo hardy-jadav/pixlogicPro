@@ -4,7 +4,8 @@
   --color-primary: #4A90B4;           /* Teal Blue - Main Brand */
   --color-secondary: #FF6B35;         /* Coral Orange - Accent */
   --color-accent: #E74C3C;            /* Red - Heart Icon */
-  --color-dark: #2D3436;              /* Dark Gray */
+  --color-text: #293241;             /* Universal text color */
+  --color-dark: var(--color-text);    /* Dark Gray */
   --color-light: #F8FAFD;             /* Light Blue-Gray */
   --color-white: #FFFFFF;
   --color-gray: #A0AEC0;
@@ -14,7 +15,7 @@
   --color-brand-primary: #f16e53;    /* Coral/Orange */
   --color-brand-blue: #6a89b6;       /* Button Blue */
   --color-brand-blue-hover: #5a78a3; /* Darker Blue */
-  --color-brand-dark: #2d343e;       /* Nav Text */
+  --color-brand-dark: var(--color-text);       /* Nav Text */
   --color-bg-topbar: #f8fafd;        /* Top Bar Gray/Blue */
   
   /* Spacing */

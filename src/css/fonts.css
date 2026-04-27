@@ -1,10 +1,7 @@
-/* Import Inter font from Fontsource */
-@import '@fontsource/inter/400.css';
-@import '@fontsource/inter/500.css';
-@import '@fontsource/inter/600.css';
-@import '@fontsource/inter/700.css';
+/* Import Montserrat font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 /* Base font settings */
 * {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }

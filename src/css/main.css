@@ -12,7 +12,8 @@
 /* Custom Base Styles */
 @layer base {
   body {
-    @apply bg-white text-brand-dark font-inter;
+    @apply bg-white font-inter;
+    color: var(--color-text);
   }
 
   h1 {
