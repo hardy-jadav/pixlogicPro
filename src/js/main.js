@@ -32,13 +32,70 @@ document.addEventListener('DOMContentLoaded', function () {
 function initMobileMenu() {
   const menuBtn = document.getElementById('menu-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
+  const closeBtn = document.getElementById('menu-close');
+  const dropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+  const desktopDropdownToggles = document.querySelectorAll('.desktop-dropdown-toggle');
+  const desktopDropdowns = document.querySelectorAll('.desktop-dropdown-content');
 
   if (menuBtn && mobileMenu) {
     menuBtn.addEventListener('click', function () {
       mobileMenu.classList.toggle('hidden');
     });
+  }
 
-    // Close menu when clicking on a link
+  if (closeBtn && mobileMenu) {
+    closeBtn.addEventListener('click', function () {
+      mobileMenu.classList.add('hidden');
+    });
+  }
+
+  dropdownToggles.forEach(toggle => {
+    const dropdown = toggle.nextElementSibling;
+
+    toggle.addEventListener('click', function () {
+      if (dropdown) {
+        dropdown.classList.toggle('hidden');
+        toggle.querySelector('i')?.classList.toggle('rotate-180');
+      }
+    });
+  });
+
+  desktopDropdownToggles.forEach(toggle => {
+    const dropdown = toggle.nextElementSibling;
+
+    toggle.addEventListener('click', function (event) {
+      event.stopPropagation();
+
+      desktopDropdowns.forEach(other => {
+        if (other !== dropdown) {
+          other.classList.add('hidden');
+          const otherToggle = other.previousElementSibling;
+          otherToggle?.querySelector('i')?.classList.remove('rotate-180');
+        }
+      });
+
+      if (dropdown) {
+        const isHidden = dropdown.classList.contains('hidden');
+        dropdown.classList.toggle('hidden', !isHidden);
+        toggle.querySelector('i')?.classList.toggle('rotate-180', isHidden);
+      }
+    });
+  });
+
+  document.addEventListener('click', function (event) {
+    const target = event.target;
+    const clickedInsideDropdown = target.closest('.desktop-dropdown');
+
+    if (!clickedInsideDropdown) {
+      desktopDropdowns.forEach(dropdown => {
+        dropdown.classList.add('hidden');
+        const toggle = dropdown.previousElementSibling;
+        toggle?.querySelector('i')?.classList.remove('rotate-180');
+      });
+    }
+  });
+
+  if (mobileMenu) {
     const links = mobileMenu.querySelectorAll('a');
     links.forEach(link => {
       link.addEventListener('click', function () {

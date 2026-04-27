@@ -4,7 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PIXLOGIX - Home</title>
+    <meta name="description" content="Care4Paws offers professional pet care services including grooming, boarding, training and veterinary support for dogs and cats.">
+    <meta name="author" content="Care4Paws by Pixlogix">
+    <meta name="theme-color" content="#1a73e8">
+    <meta property="og:title" content="Care4Paws | Professional Pet Care Services">
+    <meta property="og:description" content="Trusted pet care for dogs and cats with grooming, boarding, training, and health support.">
+    <meta property="og:type" content="website">
+    <title>Care4Paws | Pet Care Services</title>
+    <link rel="icon" href="../assets/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../dist/output.css">
     <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
 </head>
@@ -51,24 +58,40 @@
                 </div>
             </div>
 
-            <ul class="hidden lg:flex items-center space-x-9 text-[15px] font-semibold">
+            <ul class="hidden md:flex items-center space-x-9 text-[15px] font-semibold">
                 <li><a href="#" class="text-brand-primary">Home</a></li>
-                <li>
-                    <a href="#" class="text-brand-dark hover:text-brand-primary flex items-center transition-colors">
-                        About Us <i class="fa-solid fa-chevron-down ml-1.5 text-[9px]"></i>
-                    </a>
+                <li class="relative desktop-dropdown">
+                    <button type="button"
+                        class="desktop-dropdown-toggle flex items-center gap-1 text-brand-dark hover:text-brand-primary transition-colors font-semibold">
+                        About Us
+                        <i class="fa-solid fa-chevron-down ml-1.5 text-[9px] transition-transform duration-200"></i>
+                    </button>
+                    <div
+                        class="desktop-dropdown-content hidden absolute top-full left-0 mt-2 min-w-[200px] rounded-2xl bg-white border border-gray-200 shadow-lg py-3 z-50">
+                        <a href="#about" class="block px-4 py-2 text-brand-dark hover:text-brand-primary hover:bg-[#f8fafd] transition-colors">Our Story</a>
+                        <a href="#info" class="block px-4 py-2 text-brand-dark hover:text-brand-primary hover:bg-[#f8fafd] transition-colors">Pet Safety Tips</a>
+                        <a href="#team" class="block px-4 py-2 text-brand-dark hover:text-brand-primary hover:bg-[#f8fafd] transition-colors">Meet the Team</a>
+                    </div>
                 </li>
-                <li>
-                    <a href="#" class="text-brand-dark hover:text-brand-primary flex items-center transition-colors">
-                        Services <i class="fa-solid fa-chevron-down ml-1.5 text-[9px]"></i>
-                    </a>
+                <li class="relative desktop-dropdown">
+                    <button type="button"
+                        class="desktop-dropdown-toggle flex items-center gap-1 text-brand-dark hover:text-brand-primary transition-colors font-semibold">
+                        Services
+                        <i class="fa-solid fa-chevron-down ml-1.5 text-[9px] transition-transform duration-200"></i>
+                    </button>
+                    <div
+                        class="desktop-dropdown-content hidden absolute top-full left-0 mt-2 min-w-[200px] rounded-2xl bg-white border border-gray-200 shadow-lg py-3 z-50">
+                        <a href="#services" class="block px-4 py-2 text-brand-dark hover:text-brand-primary hover:bg-[#f8fafd] transition-colors">Grooming</a>
+                        <a href="#services" class="block px-4 py-2 text-brand-dark hover:text-brand-primary hover:bg-[#f8fafd] transition-colors">Boarding</a>
+                        <a href="#services" class="block px-4 py-2 text-brand-dark hover:text-brand-primary hover:bg-[#f8fafd] transition-colors">Training</a>
+                    </div>
                 </li>
-                <li><a href="#" class="text-brand-dark hover:text-brand-primary transition-colors">Gallery</a></li>
-                <li><a href="#" class="text-brand-dark hover:text-brand-primary transition-colors">Testimonials</a></li>
-                <li><a href="#" class="text-brand-dark hover:text-brand-primary transition-colors">Blog</a></li>
+                <li><a href="#moments" class="text-brand-dark hover:text-brand-primary transition-colors">Gallery</a></li>
+                <li><a href="#reviews" class="text-brand-dark hover:text-brand-primary transition-colors">Testimonials</a></li>
+                <li><a href="#faq" class="text-brand-dark hover:text-brand-primary transition-colors">Blog</a></li>
             </ul>
 
-            <div class="flex items-center">
+            <div class="flex items-center gap-3">
                 <button
                     class="bg-brand-blue text-white pl-7 pr-2 py-2 rounded-full font-bold text-[15px] flex items-center group hover:bg-brand-blueHover transition-all shadow-brand-btn">
                     <span>Book Now</span>
@@ -77,9 +100,58 @@
                         <i class="fa-solid fa-arrow-up text-[10px]"></i>
                     </div>
                 </button>
+
+                <button id="menu-toggle" aria-label="Open mobile menu"
+                    class="p-3 rounded-full text-brand-dark hover:text-brand-blueHover transition-all md:hidden">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
             </div>
 
         </nav>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 shadow-xl">
+            <div class="max-w-7xl mx-auto px-6 py-5">
+                <div class="flex items-center justify-between">
+                    <div class="text-lg font-bold text-brand-dark">Menu</div>
+                    <button id="menu-close" aria-label="Close mobile menu"
+                        class="p-3 rounded-full text-brand-dark hover:text-red-500 transition-all">
+                        <i class="fa-solid fa-times text-lg"></i>
+                    </button>
+                </div>
+
+                <nav class="mt-5 space-y-3">
+                    <a href="#hero" class="block text-brand-primary font-semibold py-3 px-4 rounded-xl hover:bg-[#f8fafd] transition-colors">Home</a>
+
+                    <div class="space-y-1">
+                        <button type="button" class="mobile-dropdown-toggle w-full flex items-center justify-between py-3 px-4 rounded-xl bg-[#f8fafd] text-brand-dark font-semibold border border-gray-200 hover:border-brand-primary hover:text-brand-primary transition-all">
+                            About Us
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="mobile-dropdown-content hidden space-y-2 mt-2 px-4">
+                            <a href="#about" class="block text-brand-dark hover:text-brand-primary transition-colors">Our Story</a>
+                            <a href="#info" class="block text-brand-dark hover:text-brand-primary transition-colors">Pet Safety Tips</a>
+                            <a href="#team" class="block text-brand-dark hover:text-brand-primary transition-colors">Meet the Team</a>
+                        </div>
+                    </div>
+
+                    <div class="space-y-1">
+                        <button type="button" class="mobile-dropdown-toggle w-full flex items-center justify-between py-3 px-4 rounded-xl bg-[#f8fafd] text-brand-dark font-semibold border border-gray-200 hover:border-brand-primary hover:text-brand-primary transition-all">
+                            Services
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="mobile-dropdown-content hidden space-y-2 mt-2 px-4">
+                            <a href="#services" class="block text-brand-dark hover:text-brand-primary transition-colors">Grooming</a>
+                            <a href="#services" class="block text-brand-dark hover:text-brand-primary transition-colors">Boarding</a>
+                            <a href="#services" class="block text-brand-dark hover:text-brand-primary transition-colors">Training</a>
+                        </div>
+                    </div>
+
+                    <a href="#moments" class="block text-brand-dark font-semibold py-3 px-4 rounded-xl hover:bg-[#f8fafd] transition-colors">Gallery</a>
+                    <a href="#reviews" class="block text-brand-dark font-semibold py-3 px-4 rounded-xl hover:bg-[#f8fafd] transition-colors">Testimonials</a>
+                    <a href="#faq" class="block text-brand-dark font-semibold py-3 px-4 rounded-xl hover:bg-[#f8fafd] transition-colors">Blog</a>
+                </nav>
+            </div>
+        </div>
     </header>
 
     <!-- Hero Section -->
@@ -93,10 +165,12 @@
                 <div data-animate
                     class="flex flex-col items-center md:items-start text-center md:text-left space-y-6 relative">
                     <h2
-                        class="section-title text-xxl md:text-3xl lg:text-4xl font-semibold text-brand-dark leading-tight">
-                        Where every
+                        class="relative flex items-center -left-12 justify-center gap-2 text-2xl md:text-3xl lg:text-4xl font-semibold text-brand-dark leading-tight">
+                        <img src="../assets/icons/icon.svg" alt=""
+                            class="w-6 h-6 md:w-10 md:h-10 -translate-y-10 translate-x-6 md:-translate-y-10 md:translate-x-2" />
+                        <span>Where every
                         <span class="text-brand-primary">paw gets the<br class="hidden md:block" /> love</span>
-                        it deserves
+                        it deserves</span>
                     </h2>
 
                     <p class="text-brand-dark text-base md:text-lg leading-relaxed max-w-lg mx-auto md:mx-0">
@@ -163,9 +237,12 @@
                 <div class="text-center px-4">
                     <div data-animate class="space-y-6 relative">
                         <h2
-                            class="section-title-center text-2xl md:text-3xl lg:text-4xl font-semibold text-brand-dark leading-tight">
-                            How we make pet care simple and stress-free
+                            class="relative flex items-center justify-center gap-2 text-2xl md:text-3xl lg:text-4xl font-semibold text-brand-dark leading-tight">
+                            <img src="../assets/icons/icon.svg" alt=""
+                                class="w-8 h-8 md:w-10 md:h-10 -translate-y-8 translate-x-4 md:-translate-y-10 md:translate-x-8" />
+                            <span>How we make pet care simple and stress-free</span>
                         </h2>
+
                     </div>
                 </div>
 
@@ -295,10 +372,14 @@
                         class="space-y-4 md:space-y-6 relative w-full flex flex-col items-center md:items-start">
 
                         <div class="relative inline-block">
+
                             <h2
-                                class="section-title text-2xl md:text-3xl lg:text-4xl font-semibold text-brand-dark leading-tight">
-                                A little bit about us
+                                class="relative flex items-center justify-center gap-2 text-2xl md:text-3xl lg:text-4xl font-semibold text-brand-dark leading-tight">
+                                <img src="../assets/icons/icon.svg" alt=""
+                                    class="w-8 h-8 md:w-10 md:h-10 -translate-y-4 translate-x-2" />
+                                <span>A little bit about us</span>
                             </h2>
+
                         </div>
 
                         <p class="text-brand-dark text-sm md:text-base leading-relaxed max-w-lg mx-auto md:mx-0">
@@ -339,8 +420,10 @@
 
             <div class="text-center mt-20 md:mt-2 mb-8">
                 <h2
-                    class="section-title-center text-2xl md:text-3xl lg:text-4xl font-semibold text-brand-dark leading-tight">
-                    Our pet care services
+                    class="relative flex items-center justify-center gap-2 text-2xl md:text-3xl lg:text-4xl font-semibold text-brand-dark leading-tight">
+                    <img src="../assets/icons/icon.svg" alt=""
+                        class="w-8 h-8 md:w-10 md:h-10 -translate-y-4 translate-x-2" />
+                    <span>Our pet care services</span>
                 </h2>
                 <p class="text-brand-dark text-base md:text-lg max-w-3xl mx-auto">
                     Our pet care services offer loving, professional attention to keep your furry friends happy and
@@ -543,13 +626,12 @@
                 <div class="flex flex-col items-center md:items-start text-center md:text-left space-y-8 order-1">
 
                     <div data-animate class="space-y-4 relative w-full flex flex-col items-center md:items-start">
-                        <div
-                            class="absolute -top-8 left-1/2 -translate-x-1/2 md:left-[-40px] md:top-[-8px] md:translate-x-0 w-8 h-8">
-                            <img src="../assets/icons/icon.svg" alt="paw" class="w-full h-full object-contain" />
-                        </div>
                         <h2
-                            class="text-3xl md:text-3xl lg:text-4xl font-black leading-tight text-brand-dark pt-2 md:pt-0">
-                            How to get started
+                            class="relative flex items-center justify-center gap-2 text-2xl md:text-3xl lg:text-4xl font-semibold text-brand-dark leading-tight">
+                            <img src="../assets/icons/icon.svg" alt=""
+                                class="w-8 h-8 md:w-10 md:h-10 -translate-y-4 translate-x-2" />
+                            <span>How to get started
+                            </span>
                         </h2>
                     </div>
 
@@ -654,13 +736,11 @@
         <div class=" relative z-10">
 
             <div class="container-custom text-center mb-12">
-                <div class="flex justify-center mb-4">
-                    <div class="w-8 h-8">
-                        <img src="../assets/icons/icon.svg" alt="paw" class="w-full h-full object-contain" />
-                    </div>
-                </div>
-                <h2 class="text-2xl md:text-3xl lg:text-4xl font-black text-brand-dark mb-4">
-                    Meet the hearts behind the care
+                <h2
+                    class="relative flex items-center justify-center gap-2 text-2xl md:text-3xl lg:text-4xl font-semibold text-brand-dark leading-tight">
+                    <img src="../assets/icons/icon.svg" alt=""
+                        class="w-8 h-8 md:w-10 md:h-10 -translate-y-4 translate-x-2" />
+                    <span>Meet the hearts behind the care</span>
                 </h2>
                 <p class="text-brand-dark text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
                     Our dedicated team of pet lovers is what sets us apart. From expert vets to loving caregivers, every
@@ -939,10 +1019,12 @@
 
         <div class="px-6 pt-32 md:px-24 relative z-10">
             <div class="text-center mb-10">
-                <h2
-                    class="section-title-center text-xxl md:text-3xl lg:text-4xl font-semibold text-brand-dark leading-tight">
-                    Happy pets, happier people
 
+                <h2
+                    class="relative flex items-center justify-center gap-2 text-2xl md:text-3xl lg:text-4xl font-semibold text-brand-dark leading-tight">
+                    <img src="../assets/icons/icon.svg" alt=""
+                        class="w-8 h-8 md:w-10 md:h-10 -translate-y-4 translate-x-2" />
+                    <span>Happy pets, happier people</span>
                 </h2>
                 <p class="text-brand-dark pt-4 text-sm md:text-lg max-w-3xl mx-auto leading-relaxed">
                     When pets feel loved, safe, and well-cared for, their joy shines through. We're here to make tails
@@ -1106,8 +1188,12 @@
 
             <div class="max-w-5xl mx-auto text-center mb-12" data-animate>
 
-                <h2 class="section-title text-xxl md:text-3xl lg:text-4xl font-semibold text-brand-dark leading-tight">
-                    Curious? let’s clear things up.
+
+                <h2
+                    class="relative flex items-center justify-center gap-2 text-2xl md:text-3xl lg:text-4xl font-semibold text-brand-dark leading-tight">
+                    <img src="../assets/icons/icon.svg" alt=""
+                        class="w-8 h-8 md:w-10 md:h-10 -translate-y-4 translate-x-2" />
+                    <span>Curious? let’s clear things up.</span>
                 </h2>
                 <p class="text-brand-dark text-base md:text-lg leading-relaxed max-w-3xl mt-4 mx-auto">
                     We know leaving your pet in someone else's care comes with questions. That's why we've answered the
@@ -1259,9 +1345,12 @@
 
                 <div class="pl-6 md:pl-[17rem]" data-animate>
                     <h2
-                        class="section-title text-3xl md:text-3xl lg:text-4xl font-semibold text-brand-dark leading-tight text-center md:text-left">
-                        Moments from our day camp
+                        class="relative flex items-center justify-center gap-2 text-2xl md:text-3xl lg:text-4xl font-semibold text-brand-dark leading-tight">
+                        <img src="../assets/icons/icon.svg" alt=""
+                            class="w-8 h-8 md:w-10 md:h-10 -translate-y-4 translate-x-2" />
+                        <span>Moments from our day camp</span>
                     </h2>
+
                 </div>
 
                 <div
@@ -1357,8 +1446,11 @@
 
         <div class="container-custom relative z-10">
             <div class="text-center max-w-3xl mx-auto mb-12" data-animate>
-                <h2 class="section-title text-xxl md:text-3xl lg:text-4xl font-semibold text-brand-dark leading-tight">
-                    Our recent updation
+                <h2
+                    class="relative flex items-center justify-center gap-2 text-2xl md:text-3xl lg:text-4xl font-semibold text-brand-dark leading-tight">
+                    <img src="../assets/icons/icon.svg" alt=""
+                        class="w-8 h-8 md:w-10 md:h-10 -translate-y-4 translate-x-2" />
+                    <span>Our recent updation</span>
                 </h2>
                 <p class="text-brand-dark mt-4 text-base md:text-lg leading-relaxed">
                     We provide safe, reliable, and professional care tailored for every pet. From playtime to medical
@@ -1537,8 +1629,11 @@
 
 
             <div class="text-center mb-12 px-4 md:px-6 lg:px-8" data-animate>
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-brand-dark mb-4">
-                    Areas we serve
+                <h2
+                    class="relative flex items-center justify-center gap-2 text-2xl md:text-3xl lg:text-4xl font-semibold text-brand-dark leading-tight">
+                    <img src="../assets/icons/icon.svg" alt=""
+                        class="w-8 h-8 md:w-10 md:h-10 -translate-y-4 translate-x-2" />
+                    <span>Areas we serve</span>
                 </h2>
                 <p class="mx-auto max-w-3xl text-brand-dark text-base md:text-lg leading-relaxed">
                     Enter your ZIP code to find out if our pet care services are available near you.
@@ -1620,28 +1715,28 @@
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:flex-row gap-6 sm:gap-8 w-full lg:w-auto">
                     <div class="flex items-center justify-center lg:justify-start gap-3">
-                        <i class="fa-solid fa-location-dot text-brand-primary text-lg"></i>
+                        <img src="../assets/icons/icon-location.svg" alt="Location" class="w-6 h-6 md:w-7 md:h-7" />
                         <div class="text-xs text-left">
                             <p class="font-bold text-slate-800 leading-tight">1234 Paw Lane,</p>
                             <p class="text-slate-500">Barktown, CA 90210</p>
                         </div>
                     </div>
                     <div class="flex items-center justify-center lg:justify-start gap-3">
-                        <i class="fa-solid fa-clock text-brand-primary text-lg"></i>
+                        <img src="../assets/icons/icon-time.svg" alt="Hours" class="w-6 h-6 md:w-7 md:h-7" />
                         <div class="text-xs text-left">
                             <p class="font-bold text-slate-800 leading-tight">Mon To Sun:</p>
                             <p class="text-slate-500">9:00 AM To 5:00 PM</p>
                         </div>
                     </div>
                     <div class="flex items-center justify-center lg:justify-start gap-3">
-                        <i class="fa-solid fa-envelope text-brand-primary text-lg"></i>
+                        <img src="../assets/icons/icon-email.svg" alt="Email" class="w-6 h-6 md:w-7 md:h-7" />
                         <div class="text-xs text-left">
                             <p class="font-bold text-slate-800 leading-tight">Email Us:</p>
                             <p class="text-slate-500">info@care4paws.com</p>
                         </div>
                     </div>
                     <div class="flex items-center justify-center lg:justify-start gap-3">
-                        <i class="fa-solid fa-phone text-brand-primary text-lg"></i>
+                        <img src="../assets/icons/icon-phone.svg" alt="Phone" class="w-6 h-6 md:w-7 md:h-7" />
                         <div class="text-xs text-left">
                             <p class="font-bold text-slate-800 leading-tight">Call Us:</p>
                             <p class="text-slate-500">+844 1234 567 890</p>
@@ -1693,7 +1788,8 @@
                                         class="fab fa-tiktok"></i></a>
                             </div>
                             <div class="container mx-auto flex flex-col text-[10px] sm:text-xs text-brand-dark">
-                                <p class="text-center font-semibold tracking-wide md:text-left">© 2026 All Rights Reserved. | Terms | Privacy</p>
+                                <p class="text-center font-semibold tracking-wide md:text-left">© 2026 All Rights
+                                    Reserved. | Terms | Privacy</p>
                             </div>
                         </div>
                     </div>
