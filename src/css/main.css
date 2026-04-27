@@ -139,7 +139,8 @@
   .section-title-center {
     position: relative;
   }
-  .section-title-center::before{
+
+  .section-title-center::before {
     content: "";
     position: absolute;
     left: 18px;
@@ -155,7 +156,27 @@
 
   .blob-shape {
     /* Values tuned to match your uploaded image */
-    border-radius: 42% 58% 70% 30% /  45% 45% 55% 55%;
-    transform: rotate(-5deg); /* Optional: adds that slight organic tilt seen in the image */
-}
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    transform: rotate(-5deg);
+    /* Optional: adds that slight organic tilt seen in the image */
+  }
+
+  .gallery-track {
+    animation: gallery-scroll 18s linear infinite;
+    will-change: transform;
+  }
+
+  .gallery-track:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes gallery-scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
 }
